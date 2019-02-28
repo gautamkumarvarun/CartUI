@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+  
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  
+  <script>  
+  $(document).ready(function(){
+var quantitiy=0;
+   $('.quantity-right-plus').click(function(e){
+        
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        var quantity = parseInt($('#quantity').val());
+        
+        // If is not undefined
+            
+            $('#quantity').val(quantity + 1);
+
+          
+            // Increment
+        
+    });
+
+     $('.quantity-left-minus').click(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        var quantity = parseInt($('#quantity').val());
+        
+        // If is not undefined
+      
+            // Increment
+            if(quantity>0){
+            $('#quantity').val(quantity - 1);
+            }
+    });
+    
+}); 
+  </script>  
+  
+  <!--<script>
+  $(document).ready(function(){ 
+  $('#remove').click(function(){ 
+   $('#row').remove(); 
+   });
+});
+-->
+
+  </script>
+</head>
+<body>
+<div class="container container-fluid" style="margin-top:100px;border-radius:20px;padding-bottom:50px;">     
+   <div class="table-responsive">
+    <table class="table table-bordered" style="margin-top:50px;">
+      <thead class="table-info" style="background-color:rgb(51, 167, 224);color:white;">
+        <tr>
+          <th>#</th>
+          <th>IMAGE</th>  
+          <th>ITEM</th> 
+          
+          <th>QTY</th>
+          <th>PRICE</th>
+          <th>SHIPPING</th>
+          <th>TOTAL</th>
+		  <th></th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="row">
+          <td>1</td>
+          <td>
+		  <span></span>
+          <img src="cinqueterre.jpg" class="img-fluid"  alt="Cinque Terre" width="104" height="106">
+          <td>
+          <strong>Product Name</strong>
+          <p>Description</p>
+          </td>                           
+          
+          <td>          
+          <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="quantity-left-minus  btn btn-danger btn-number"  data-type="minus" data-field="">
+                                          <span>-</span>
+                                        </button>
+                                    </span>
+                                    <input type="text" id="quantity" name="quantity" class="form-control input-number" value="10" min="1" max="100">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                            <span>+</span>
+                                        </button>
+                                    </span>
+                                </div>                                             
+          </td>
+          <td>₹2000</td>
+          <td>₹500</td>
+          <td>₹2500</td>
+		  <td><button id="remove" class="btn btn-danger btn-sm">Remove</button></td>
+		  </tr>
+      </tbody>
+    </table>
+	<h5 CLASS="float-right"><strong>TOTAL:<span>  ₹2500</span></strong></h5>
+  </div>
+  
+  <button class="btn-info btn-lg"><i class="fas fa-home"></i> CONTINUE SHOPPING</button>
+  <button class="btn-info btn-lg float-right ">CHECKOUT</button>
+</div>
+
+</body>
+</html>
